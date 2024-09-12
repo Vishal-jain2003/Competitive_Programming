@@ -1,0 +1,45 @@
+https://www.codechef.com/problems/SAMESTR
+
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+       Scanner sc = new Scanner(System.in);
+       int t = sc.nextInt();
+       while(t-- > 0)
+       {
+           int n = sc.nextInt();
+           String s = sc.next();
+           int zc=0;
+           for (char c:s.toCharArray())
+           {
+               if (c=='0') zc++;
+           }
+           int oc = n-zc;
+           int ans=0;
+           for (int k=1;k<=n;k++)
+           {
+               if (k>=zc && (k-zc)%2==0 || k>=oc && (k-oc)%2==0)
+               {
+                   ans++;
+               }
+           }
+           System.out.println(ans);
+       }
+	}
+}
+
+if there is example of 0 1 0 0 1 1 1
+NOw 
+zc = 3 
+oc = 4
+for k = 3 and k = 4 it 's possible 
+and also for k=5 and k=6 also 
+when k = 5 so we flip zero why ?
+because 5-3 for 0 to 1 and we have remain 2 so we flip 1 bit 2 times it will remain same  [THIS IS CATCH OF THIS QUESTION]
